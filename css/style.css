@@ -27,7 +27,7 @@ ul {
 }
 
 li {
-    margin-right: 20px;
+    padding-right: 20px;
     font-size: 18px;
     color: #ffffff;
 }
@@ -48,64 +48,65 @@ main {
     margin: 0 auto;
     position: relative;
 }
-/* 
-article {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-} */
-  
-  .kachel {
-    display: inline-block;
-    position: relative;
-    width: calc(33.33% - 30px);
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin: 10px;
-    padding: 10px;
-    vertical-align: top;
-  }
-  
-  .tile-headline h3 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 10px;
-  }
 
-  .tile-text {
-    position: relative;
-  }
+#tiles {
+  overflow: hidden;
+}
+
+.tile {
+  /* display: inline-block; */
+  position: relative;
+  /* width: calc(33.33% - 30px); */
+  width: 300px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  vertical-align: top;
+  float: left;
+}
   
-  .tile-text p {
-    font-size: 16px;
-    margin-bottom: 40px;
-    margin-top: -15px;
-  }
+.tile-headline h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.tile-text {
+  position: relative;
+}
+  
+.tile-text p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  margin-top: -15px;
+}
   
   .tile-tags {
-    display: flex;
-    justify-content: flex-start;
-  }
+  display: flex;
+  justify-content: flex-start;
+}
   
-  .tile-tags ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+.tile-tags ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
   
-  .tile-tags li {
-    margin-right: 10px;
-    font-size: 14px;
-    color: #333;
-    background-color: #ccc;
-    padding: 5px 10px;
-    border-radius: 20px;
-  }
+.tile-tags li {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #333;
+  background-color: #ccc;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
 
-  .hover-text {
-    width: 100%;
-    height: 100%;
-    display: none; /* Text verstecken */
-    animation: fadeIn 0.3s ease-in-out forwards;
+.hover-text {
+  width: 100%;
+  height: 100%;
+  display: none; /* Text verstecken */
+  animation: fadeIn 0.3s ease-in-out forwards;
   }
   
   .tile-text:hover .hover-text {
@@ -135,6 +136,17 @@ footer {
     color: #fff;
     display: flex;
     align-items: center;
+}
+
+@media screen  and (max-width: 768px) {
+  body { 
+    background-color: white;
+  }
+
+  .tile {
+    width: calc(100% - 40px) ;
+  }
+
 }
     
 
