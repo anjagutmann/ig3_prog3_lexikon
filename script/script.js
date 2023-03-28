@@ -1,47 +1,27 @@
-// let stage;
-// let stageHeight;
-// let stageWidth;
-
 $(function () {
-    // stage = $('#renderer')
-    // stageHeight = stage.innerHeight();
-    // stageWidth = stage.innerWidth();
 
-    // for (let i=0; i < data.length; i++){
-    //     let currentTerm = data[i];
-    //     let title = currentTerm.title;
-    //     let shortExplanation = currentTerm.short_explanation;
-    //     let tags = currentTerm.tags;
-    // }
+    //each-Schleife verwenden, um über jedes Objekt in der Array-Variable "data" zu iterieren 
+    //und Inhalt in die entsprechenden Kacheln einzufügen
 
     $.each(data, function(index, value) {
+        
         let title = value.title;
         let shortExplain = value.short_explanation;
         let explain = value.explanation;
         let tags = value.tags;
-
-        //Titel
-        $('.tile-headline h3').text(value.title);
-        $('.tile-text p').text(value.short_explanation);
-        $('.hover-text').text(value.explanation);
-        // $('.tile-tags li').text(value.tags);
-
-        //Tags
-        let tagList = $('.tile-tags ul');
-        tagList.empty(); // clear any existing tags
-
+    
+        // alle Kacheln mit dem $.each-Operator durchlaufen und auf Elemente in Kachel zugreifen
+        let tile = $('.tile').eq(index); // mit .eq(index) wird das Element ausgewählt, das dem aktuellen Index in der Schleife entspricht
+        tile.find('.tile-headline h3').text(title);
+        tile.find('.tile-text p').text(shortExplain);
+        tile.find('.hover-text').text(explain);
+    
+        let tagList = tile.find('.tile-tags ul');
+        tagList.empty(); // alle Tags löschen und die erstellen, die gebraucht werden
         $.each(tags, function(index, tag) {
-            let tagItem = $('<li>').text(tag);
-            tagList.append(tagItem);
+            tagList.append($('<li>').text(tag));
         });
-
-        //Text einfügen
-        title.text(value.title);
-        shortExplain.text(value.short_explanation);
-        explain.text(value.explanation);
-        // tags.text(value.tags);
-
-        $('#tiles').append(tile);
     });
+       
 });
 

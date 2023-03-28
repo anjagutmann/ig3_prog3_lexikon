@@ -51,15 +51,18 @@ main {
 
 #tiles {
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
+  
 
 .tile {
   position: relative;
-  width: 400px;
-  border: 1px solid #ccc;
+  width: 390px;
+  border: 0.05em solid #ccc;
   box-sizing: border-box;
-  margin: 10px;
-  padding: 10px;
+  margin: 0.5em;
+  padding: 1.5em;
   vertical-align: top;
   float: left;
 }
@@ -80,10 +83,10 @@ main {
   margin: 0 0 1em 0;
 }
   
-  .tile-tags {
+.tile-tags {
   display: flex;
   justify-content: flex-start;
-
+  align-self: flex-end;
 }
   
 .tile-tags ul {
