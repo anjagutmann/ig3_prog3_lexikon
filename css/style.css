@@ -53,6 +53,7 @@ main {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+  gap: 1em;
 }
   
 
@@ -61,7 +62,6 @@ main {
   width: 390px;
   border: 0.05em solid #ccc;
   box-sizing: border-box;
-  margin: 0.5em;
   padding: 1.5em;
   vertical-align: top;
   float: left;
